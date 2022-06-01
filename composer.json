@@ -1,5 +1,5 @@
 {
-  "name": "fabiome/php-enum",
+  "name": "fabiomez/php-enum",
   "type": "library",
   "license": "MIT",
   "description": "A simple Enum PHP project.",
