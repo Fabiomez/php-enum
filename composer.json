@@ -2,7 +2,15 @@
   "name": "fabiome/php-enum",
   "type": "library",
   "license": "MIT",
-  "minimum-stability": "dev",
+  "description": "A simple Enum PHP project.",
+  "authors": [
+    {
+      "name": "Fabio Mezini",
+      "email": "fabiomezini@gmail.com"
+    }
+  ],
+  "keywords": ["php","enum","enumerator"],
+  "minimum-stability": "stable",
   "require": {
     "php": ">=7.4"
   },
