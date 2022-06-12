@@ -37,6 +37,9 @@ class EnumTest extends TestCase
         static::assertTrue($sample1_1->eq(EnumSample1::CONST_1));
         static::assertTrue($sample1_2->eq(EnumSample1::CONST_2));
         static::assertTrue($sample1_3->eq(EnumSample1::CONST_3));
+        static::assertEquals('CONST_1', $sample1_1->key());
+        static::assertEquals('CONST_2', $sample1_2->key());
+        static::assertEquals('CONST_3', $sample1_3->key());
     }
 
     public function testUniquenessOfEnumsInstances()

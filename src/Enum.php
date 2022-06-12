@@ -7,12 +7,24 @@ use ReflectionClass;
 
 abstract class Enum
 {
+    private string $key;
     private $value;
     private static array $enums = [];
 
-    private final function __construct($value)
+    private final function __construct(string $key, $value)
     {
+        $this->key = $key;
         $this->value = $value;
+    }
+
+    /**
+     * Gets the constant key name
+     *
+     * @return string
+     */
+    public final function key(): string
+    {
+        return $this->key;
     }
 
     /**
@@ -95,13 +107,13 @@ abstract class Enum
             return null;
         }
 
-        $key = get_called_class() . '::' . $key;
+        $cacheKey = get_called_class() . '::' . $key;
 
-        if (!isset(static::$enums[$key])) {
-            static::$enums[$key] = new static($value);
+        if (!isset(static::$enums[$cacheKey])) {
+            static::$enums[$cacheKey] = new static($key, $value);
         }
 
-        return static::$enums[$key];
+        return static::$enums[$cacheKey];
     }
 
     /**
